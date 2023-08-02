@@ -72,16 +72,16 @@ class BookController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 console.log(req.body);
-                const { title, description, author, price, discountRate } = req.body;
+                const { title, description, imgUrl, price, discountRate } = req.body;
                 // Make sure the required fields are present in the request body
-                if (!title || !author || !price || !description || !discountRate) {
+                if (!title || !imgUrl || !price || !description || !discountRate) {
                     res.status(400).json({ message: "All fields are required" });
                     return;
                 }
                 const book = {
                     title,
                     description,
-                    author,
+                    imgUrl,
                     price,
                     discountRate,
                 };

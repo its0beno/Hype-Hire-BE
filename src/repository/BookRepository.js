@@ -26,8 +26,8 @@ class BookRepository {
     createBook(book) {
         return __awaiter(this, void 0, void 0, function* () {
             // Implement the query to insert a new book into the database
-            const { title, author, price, description, discountRate } = book;
-            yield this.connection.execute("INSERT INTO book (title, description, author, price,  discountRate) VALUES (?, ?, ?,  ?, ?)", [title, description, author, price, discountRate]);
+            const { title, imgUrl, price, description, discountRate } = book;
+            yield this.connection.execute("INSERT INTO book (title, description, imgUrl, price,  discountRate) VALUES (?, ?, ?,  ?, ?)", [title, description, imgUrl, price, discountRate]);
         });
     }
 }

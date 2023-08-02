@@ -19,7 +19,7 @@ async function createSchema(): Promise<void> {
       CREATE TABLE IF NOT EXISTS book (
         id INT AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
-        author VARCHAR(255) NOT NULL,
+        imageUrl VARCHAR(255) NOT NULL,
         price DECIMAL(10, 2) NOT NULL,
         quantity INT NOT NULL
       )

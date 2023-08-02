@@ -64,10 +64,10 @@ export class BookController {
   async createBook(req: Request, res: Response): Promise<void> {
     try {
       console.log(req.body);
-      const { title, description, author, price, discountRate } = req.body;
+      const { title, description, imgUrl, price, discountRate } = req.body;
 
       // Make sure the required fields are present in the request body
-      if (!title || !author || !price || !description || !discountRate) {
+      if (!title || !imgUrl || !price || !description || !discountRate) {
         res.status(400).json({ message: "All fields are required" });
         return;
       }
@@ -75,7 +75,7 @@ export class BookController {
       const book = {
         title,
         description,
-        author,
+        imgUrl,
         price,
         discountRate,
       };
