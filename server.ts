@@ -1,13 +1,14 @@
-// server.ts
 import express, { Request, Response } from "express";
 import { createConnection, Connection } from "mysql2/promise";
 import { BookController } from "./src/controller/BookController";
 import swaggerUi from "swagger-ui-express";
 import swaggerJsdoc from "swagger-jsdoc";
 import { json, urlencoded } from "body-parser";
+import cors from "cors";
 
 const app = express();
 app.use(json());
+app.use(cors());
 app.use(urlencoded({ extended: true }));
 const port = 3000;
 // Function to create the database connection
