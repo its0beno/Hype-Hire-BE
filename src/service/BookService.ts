@@ -1,4 +1,3 @@
-// src/service/BookService.ts
 import { Book } from "../entity/BookEntity";
 import { BookRepository } from "../repository/BookRepository";
 import { Connection } from "mysql2/promise";
@@ -18,6 +17,4 @@ export class BookService {
   async createBook(book: Book): Promise<void> {
     await this.bookRepository.createBook(book);
   }
-
-  // Implement other book-related business logic as needed (e.g., buyBook)
 }

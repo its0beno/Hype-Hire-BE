@@ -1,7 +1,5 @@
-// dbSchema.ts
 import { createPool, Pool, PoolConnection } from "mysql2/promise";
 
-// Create a connection pool to your MySQL database
 const pool: Pool = createPool({
   host: "localhost",
   user: "root",
@@ -9,7 +7,6 @@ const pool: Pool = createPool({
   database: "hyperhire",
 });
 
-// Define the RDB schema in TypeScript/SQL commands
 async function createSchema(): Promise<void> {
   try {
     const connection: PoolConnection = await pool.getConnection();
@@ -25,8 +22,6 @@ async function createSchema(): Promise<void> {
       )
     `);
 
-    // Create other tables and define relationships, if needed
-
     connection.release();
     console.log("RDB schema created successfully!");
   } catch (error) {
@@ -36,5 +31,4 @@ async function createSchema(): Promise<void> {
   }
 }
 
-// Call the function to create the schema when this file is executed
 createSchema();

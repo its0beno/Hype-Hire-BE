@@ -1,4 +1,3 @@
-// src/repository/BookRepository.ts
 import { Book } from "../entity/BookEntity";
 import { Connection, RowDataPacket } from "mysql2/promise";
 
@@ -10,12 +9,10 @@ export class BookRepository {
   }
 
   async getAllBooks(): Promise<Book[]> {
-    // Implement the query to fetch all books from the database
     const [rows] = await this.connection.execute<RowDataPacket[]>(
       "SELECT * FROM book"
     );
 
-    // Cast the query result to Book[]
     const books: Book[] = rows as Book[];
     return books;
   }

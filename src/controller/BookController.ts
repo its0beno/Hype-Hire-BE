@@ -1,4 +1,3 @@
-// src/controller/BookController.ts
 import { Request, Response } from "express";
 import { BookService } from "../service/BookService";
 import { Connection } from "mysql2/promise";
@@ -87,6 +86,4 @@ export class BookController {
       res.status(500).json({ message: `Internal server error${error}` });
     }
   }
-
-  // Implement other book-related controller methods as needed (e.g., buyBook)
 }
